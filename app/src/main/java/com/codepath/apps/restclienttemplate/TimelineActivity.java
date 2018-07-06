@@ -100,10 +100,12 @@ public class TimelineActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_timeline, menu);
         MenuItem menuItem = menu.findItem(R.id.miCompose);
-
         if (menuItem != null) {
             tintMenuIcon(this, menuItem, android.R.color.white);
         }
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.bbird);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         return true;
     }
 
