@@ -19,6 +19,8 @@ public class Tweet {
     public User user;
     public String createdAt;
     public String timestamp;
+    public Long favoriteCount;
+    public Boolean isFavorite;
 
     // no-arg, empty constructor for parceler
     public Tweet() {}
@@ -33,6 +35,8 @@ public class Tweet {
         tweet.createdAt = jsonObject.getString("created_at");
         tweet.user = User.fromJSON(jsonObject.getJSONObject("user"));
         tweet.timestamp = getRelativeTimeAgo(tweet.createdAt);
+        tweet.favoriteCount = jsonObject.optLong("favorite_count");
+        tweet.isFavorite = jsonObject.optBoolean("favorited");
         return tweet;
 
     }
